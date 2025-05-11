@@ -7,7 +7,7 @@ from pymongo import MongoClient
 # Goal: being able to upload files to mongoDB, whether these files are ndjson or csv files
 
 def load_ndjson(path):
-    """Read a newline-delimited JSON file into a list of dicts."""
+    # Read a newline-delimited JSON file into a list of dicts.
     docs = []
     with open(path, 'r', encoding='utf-8') as f:
         for line in f:
@@ -18,7 +18,7 @@ def load_ndjson(path):
     return docs
 
 def load_csv(path):
-    """Read a CSV file into a list of dicts (keys = column names)."""
+    # Read a CSV file into a list of dicts (keys = column names).
     docs = []
     with open(path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
